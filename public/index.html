@@ -27,21 +27,54 @@
       }
       #title
       {
+        animation-duration: 2s;
+        animation-name: revealright;
+        animation-delay: 3s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
         width: 65%;
         margin: 0; 
         padding: 0; 
+        clip-path: inset(0% 0% 0% 100%);
       }
       #logo
       {
+        animation-duration: 5s;
+        animation-name: fadein;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
         width: 25%;
         margin: 0; 
         padding: 0; 
+        opacity: 0;
       }
       #title-logo
       {
         display: inline-block;
         justify-self: center;
         align-self: center;
+      }
+      @keyframes fadein
+      {
+        from
+        {
+          opacity: 0;
+        }
+        to
+        {
+          opacity: 1;
+        }
+      }
+      @keyframes revealright
+      {
+        from
+        {
+          clip-path: inset(0% 0% 0% 100%);
+        }
+        to
+        {
+          clip-path: inset(0% 0% 0% 0%);
+        }
       }
     </style>
   </head>
