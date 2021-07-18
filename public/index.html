@@ -4,15 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dulce Engineering - Home</title>
-    <script defer src="/__/firebase/7.22.0/firebase-app.js"></script>
-    <script defer src="/__/firebase/7.22.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.22.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.22.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.22.0/firebase-storage.js"></script>
-    <script defer src="/__/firebase/7.22.0/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/7.22.0/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/7.22.0/firebase-performance.js"></script>
-    <script defer src="/__/firebase/init.js"></script>
+
     <style media="screen">
       body 
       { 
@@ -25,34 +17,50 @@
         width: 100vw;
         display: grid;
       }
+      #title-logo
+      {
+        xborder: 1px solid red;
+        align-self: center;
+        text-align: center;
+      }
       #title
       {
+        xborder: 1px solid red;
         animation-duration: 2s;
         animation-name: revealright;
         animation-delay: 3s;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
-        width: 65%;
-        margin: 0; 
-        padding: 0; 
-        clip-path: inset(0% 0% 0% 100%);
+        clip-path: inset(0% 100% 0% 0%);
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 10px;
+        width: 50%;
+      }
+      #title-dulce
+      {
+        xborder: 1px solid blue;
+        margin-bottom: 10px;
+        width: 50%;
+      }
+      #title-engineering
+      {
+        xborder: 1px solid blue;
+        width: 100%;
       }
       #logo
       {
+        xborder: 1px solid blue;
+        width: 19%;
+        margin: 0; 
+        padding: 0; 
+        vertical-align: bottom;
         animation-duration: 5s;
         animation-name: fadein;
         animation-timing-function: ease-in;
         animation-fill-mode: forwards;
-        width: 25%;
-        margin: 0; 
-        padding: 0; 
         opacity: 0;
-      }
-      #title-logo
-      {
-        display: inline-block;
-        text-align: center;
-        align-self: center;
       }
       @keyframes fadein
       {
@@ -69,7 +77,7 @@
       {
         from
         {
-          clip-path: inset(0% 0% 0% 100%);
+          clip-path: inset(0% 100% 0% 0%);
         }
         to
         {
@@ -78,32 +86,14 @@
       }
     </style>
   </head>
+
   <body>
     <div id="title-logo">
-      <img id="title" src="images/title.svg" />
-      <img id="logo" src="images/logo.svg" />
+      <img id="logo" src="images/logo-3.svg" />
+      <div id="title">
+        <img id="title-dulce" src="images/title-dulce.svg" />
+        <img id="title-engineering" src="images/title-engineering.svg" />
+      </div>
     </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', Main);
-      function Main() 
-      {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        let app = firebase.app();
-      }
-    </script>
   </body>
 </html>
