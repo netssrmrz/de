@@ -98,51 +98,53 @@
 
       function Main()
       {
+        const gfx = {};
+
+        Init_Canvas(gfx);
+        window.onresize = () => Init_Canvas(gfx);
+        window.requestAnimationFrame(t => Draw_Frame(t, gfx));
+      }
+
+      function Init_Canvas(gfx)
+      {
         const page_width = window.innerWidth;
         const page_height = window.innerHeight;
+        gfx.x = page_width/2;
+        gfx.y = page_height/2;
 
         const canvas = document.getElementById('page_canvas');
         canvas.width = page_width;
         canvas.height = page_height;
-        const ctx = canvas.getContext('2d');
 
-        Animate(ctx, page_width/2, page_height/2);
+        gfx.ctx = canvas.getContext('2d');
+        const stroke_style = gfx.ctx.createRadialGradient(0, 0, 5, 0, 0, 25);
+        stroke_style.addColorStop(0, "#fff");
+        stroke_style.addColorStop(0.2, "#ff8");
+        stroke_style.addColorStop(0.8, "#f00");
+        gfx.ctx.strokeStyle = stroke_style;
+        gfx.ctx.lineWidth = 3;
+        gfx.ctx.lineCap = "round";
       }
 
-      function Animate(ctx, x, y)
+      function Draw_Frame(draw_time, gfx)
       {
-        window.onresize = Resize_Canvas;
-        function Resize_Canvas()
-        {
-          const page_width = window.innerWidth;
-          const page_height = window.innerHeight;
+        const ctx = gfx.ctx;
 
-          const canvas = ctx.canvas;
-          canvas.width = page_width;
-          canvas.height = page_height;
-          ctx = canvas.getContext('2d');
-          x = page_width/2;
-          y = page_height/2;
-        }
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.save();
 
-        window.requestAnimationFrame(Draw_Frame);
-        function Draw_Frame(draw_time)
-        {
-          ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-          ctx.save();
+        ctx.translate(gfx.x, gfx.y);
 
-          ctx.translate(x, y);
-          //const s = Math.sin(draw_time/1000.0)*50;
-          const s = Math.max(ctx.canvas.width, ctx.canvas.height)/40;
-          ctx.scale(s, s);
-          const a = draw_time/200.0;
-          ctx.rotate(-a);
-          Draw_Spiral(ctx);
+        const s = Math.max(ctx.canvas.width, ctx.canvas.height)/40;
+        ctx.scale(s, s);
 
-          ctx.restore();
+        const a = draw_time/200.0;
+        ctx.rotate(-a);
 
-          window.requestAnimationFrame(Draw_Frame);
-        }
+        Draw_Spiral(ctx);
+
+        ctx.restore();
+        window.requestAnimationFrame(t => Draw_Frame(t, gfx));
       }
 
       function Draw_Spiral(ctx)
@@ -164,14 +166,6 @@
             ctx.lineTo(x, y);
           }
         }
-
-        const stroke_style = ctx.createRadialGradient(0, 0, 5, 0, 0, 25);
-        stroke_style.addColorStop(0, "#fff");
-        stroke_style.addColorStop(0.2, "#ff8");
-        stroke_style.addColorStop(0.8, "#f00");
-        ctx.strokeStyle = stroke_style;
-        ctx.lineWidth = 3;
-        ctx.lineCap = "round";
         ctx.stroke();
       }
     </script>
