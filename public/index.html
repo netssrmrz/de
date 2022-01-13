@@ -1,184 +1,371 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dulce Engineering - Home</title>
-
-    <style media="screen">
-      body 
-      { 
-        background: #fff; 
-        color: #000; 
-        font-family: Roboto, Helvetica, Arial, sans-serif; 
-        margin: 0; 
-        padding: 0; 
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-      }
-      #title-logo
-      {
-        xborder: 1px solid red;
-        align-self: center;
-        text-align: center;
-      }
-      #title
-      {
-        xborder: 1px solid red;
-        animation-duration: 2s;
-        animation-name: revealright;
-        animation-delay: 3s;
-        animation-timing-function: ease;
-        animation-fill-mode: forwards;
-        clip-path: inset(0% 100% 0% 0%);
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 10px;
-        width: 50%;
-      }
-      #title-dulce
-      {
-        xborder: 1px solid blue;
-        margin-bottom: 10px;
-        width: 50%;
-      }
-      #title-engineering
-      {
-        xborder: 1px solid blue;
-        width: 100%;
-      }
-      #logo
-      {
-        xborder: 1px solid blue;
-        width: 19%;
-        margin: 0; 
-        padding: 0; 
-        vertical-align: bottom;
-        animation-duration: 5s;
-        animation-name: fadein;
-        animation-timing-function: ease-in;
-        animation-fill-mode: forwards;
-        opacity: 0;
-      }
-      @keyframes fadein
-      {
-        from
-        {
-          opacity: 0;
-        }
-        to
-        {
-          opacity: 1;
-        }
-      }
-      @keyframes revealright
-      {
-        from
-        {
-          clip-path: inset(0% 100% 0% 0%);
-        }
-        to
-        {
-          clip-path: inset(0% 0% 0% 0%);
-        }
-      }
-      #page_canvas
-      {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-      }
-    </style>
-
-    <script type="module">
-      window.onload = Main;
-
-      function Main()
-      {
-        const gfx = {};
-
-        Init_Canvas(gfx);
-        window.onresize = () => Init_Canvas(gfx);
-        window.requestAnimationFrame(t => Draw_Frame(t, gfx));
-      }
-
-      function Init_Canvas(gfx)
-      {
-        const page_width = window.innerWidth;
-        const page_height = window.innerHeight;
-        gfx.x = page_width/2;
-        gfx.y = page_height/2;
-
-        const canvas = document.getElementById('page_canvas');
-        canvas.width = page_width;
-        canvas.height = page_height;
-
-        gfx.ctx = canvas.getContext('2d');
-        const stroke_style = gfx.ctx.createRadialGradient(0, 0, 5, 0, 0, 25);
-        stroke_style.addColorStop(0, "#fff");
-        stroke_style.addColorStop(0.2, "#ff8");
-        stroke_style.addColorStop(0.8, "#f00");
-        gfx.ctx.strokeStyle = stroke_style;
-        gfx.ctx.lineWidth = 3;
-        gfx.ctx.lineCap = "round";
-      }
-
-      function Draw_Frame(draw_time, gfx)
-      {
-        const ctx = gfx.ctx;
-
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        ctx.save();
-
-        ctx.translate(gfx.x, gfx.y);
-
-        const s = Math.max(ctx.canvas.width, ctx.canvas.height)/40;
-        ctx.scale(s, s);
-
-        const a = draw_time/200.0;
-        ctx.rotate(-a);
-
-        Draw_Spiral(ctx);
-
-        ctx.restore();
-        window.requestAnimationFrame(t => Draw_Frame(t, gfx));
-      }
-
-      function Draw_Spiral(ctx)
-      {
-        const t_start = 0, t_end = 30, t_step = 0.1;
-
-        ctx.beginPath();
-        for (let t = t_start; t < t_end; t += t_step)
-        {
-          const x = t * Math.cos(t);
-          const y = t * Math.sin(t);
-
-          if (t == t_start)
-          {
-            ctx.moveTo(x, y);
-          }
-          else
-          {
-            ctx.lineTo(x, y);
-          }
-        }
-        ctx.stroke();
-      }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Anchor | Freelancer & Creative Agency Portfolio</title>
+    <meta name="author" content="Themezinho">
+    <meta name="description" content="Anchor | Freelancer & Creative Agency Portfolio">
+    <meta name="keywords" content="creative, works, showcase, portfolio, highlight, projects, parallax, agency, digital, studio, css, animation, transition, svg, html, css">
+    <!-- SOCIAL MEDIA META -->
+    <meta property="og:description" content="Anchor | Freelancer & Creative Agency Portfolio">
+    <meta property="og:image" content="http://www.themezinho.net/Anchor/preview.png">
+    <meta property="og:site_name" content="Anchor">
+    <meta property="og:title" content="Anchor">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.themezinho.net/Anchor">
+    <!-- TWITTER META -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Anchor">
+    <meta name="twitter:creator" content="@Anchor">
+    <meta name="twitter:title" content="Anchor">
+    <meta name="twitter:description" content="Anchor | Freelancer & Creative Agency Portfolio">
+    <meta name="twitter:image" content="http://www.themezinho.net/Anchor/preview.png">
+    <!-- FAVICON FILES -->
+    <link href="ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+    <link href="ico/favicon.png" rel="shortcut icon">
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/hamburger-menu.css">
+    <link rel="stylesheet" href="css/odometer.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
-    <div id="title-logo">
-      <img id="logo" src="images/logo-3.svg" />
-      <div id="title">
-        <img id="title-dulce" src="images/title-dulce.svg" />
-        <img id="title-engineering" src="images/title-engineering.svg" />
-      </div>
+    <div class="preloader"> <img src="images/preloader.gif" alt="Image">
+      <ul class="text-rotater">
+        <li>Hangin there</li>
+        <li>Still loading</li>
+        <li>Almost done</li>
+      </ul>
     </div>
-    <canvas id="page_canvas"></canvas>
+    <!-- end preloader -->
+    <div class="transition-overlay"></div>
+    <!-- end transition-overlay -->
+
+    <main>
+      <ul class="hamburger-navigation">
+        <li><a href="index.html">Home</a>
+        <ul class="dropdown">
+          <li><a href="index-video.html">VIDEO BG</a></li>
+          <li><a href="index-mouse-split.html">MOUSE SPLIT</a></li>
+          <li><a href="index-animation.html">ANIMATION</a></li>
+        </ul>
+        </li>
+        <li><a href="anchor.html">Anchor</a> </li>
+        <li><a href="showcase-four-cols.html">Showcase</a>
+        <ul class="dropdown">
+          <li><a href="showcase-two-cols.html">TWO COLS</a></li>
+          <li><a href="showcase-three-cols.html">THREE COLS</a></li>
+          <li><a href="showcase-four-cols.html">FOUR COLS</a></li>
+          <li><a href="showcase-five-cols.html">FIVE COLS</a></li>
+        </ul>
+          </li>
+        <li><a href="journal.html">Journal<span>BETA</span></a> </li>
+        <li><a href="say-hello.html">Say Hello</a> </li>
+      </ul>
+      <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path class="shape-overlays__path" d=""></path>
+        <path class="shape-overlays__path" d=""></path>
+        <path class="shape-overlays__path" d=""></path>
+      </svg>
+
+      <header class="header">
+        <div class="logo"><img src="images-de/logo.svg" alt="Image"></div>
+        <span class="phone" hidden>t: +380 83 857 5 577</span>
+        <a href="mailto:it@dulceeng.com.au" target="_blank" class="phone" >it@dulceeng.com.au</a>
+        <div class="hamburger" id="hamburger">
+          <div class="hamburger__line hamburger__line--01">
+            <div class="hamburger__line-in hamburger__line-in--01"></div>
+          </div>
+          <div class="hamburger__line hamburger__line--02">
+            <div class="hamburger__line-in hamburger__line-in--02"></div>
+          </div>
+          <div class="hamburger__line hamburger__line--03">
+            <div class="hamburger__line-in hamburger__line-in--03"></div>
+          </div>
+          <div class="hamburger__line hamburger__line--cross01">
+            <div class="hamburger__line-in hamburger__line-in--cross01"></div>
+          </div>
+          <div class="hamburger__line hamburger__line--cross02">
+            <div class="hamburger__line-in hamburger__line-in--cross02"></div>
+          </div>
+        </div>
+        <div class="equalizer"> <span></span> <span></span> <span></span> <span></span> </div>
+        <ul class="language" hidden>
+          <li><a href="#">EN</a></li>
+          <li><a href="#">RU</a></li>
+        </ul>
+      </header>
+
+      <ul class="social-bar" hidden>
+        <li><a href="#">FB</a></li>
+        <li><a href="#">TW</a></li>
+        <li><a href="#">YT</a></li>
+        <li><a href="#">BE</a></li>
+      </ul>
+
+      <section class="slider">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide bg-image" data-background="images/hero1.jpg" data-stellar-background-ratio="0.5">
+              <div class="inner">
+                <h5 data-swiper-parallax="-600">IT CONSULTING</h5>
+                <h2 data-swiper-parallax="-400">Expert knowledge when you need it</h2>
+                <p data-swiper-parallax="-200">
+                  Our experts are here to help you when all you need is a little guidance.
+                  Whether it's architecture recommendations, code design, or ecommerce guidance
+                  we're here to offer a helping hand.
+                </p>
+                <a hidden href="#" class="link">DISCOVER NOW</a>
+                <a hidden href="videos/video.mp4" class="video-link" data-fancybox data-width="640" data-height="360">
+                <svg hidden version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 104" enable-background="new 0 0 104 104" xml:space="preserve">
+                  <circle class="video-play-circle" fill="none" stroke="#fff" stroke-width="4" stroke-miterlimit="10" cx="52" cy="52" r="50"/>
+                </svg>
+                <span hidden class="video-play-outline"></span> </a> </div>
+            </div>
+            <div class="swiper-slide bg-image" data-background="images/hero2.jpg" data-stellar-background-ratio="0.5">
+              <div class="inner">
+                <h5 data-swiper-parallax="-600">SOFTWARE ENGINEERING</h5>
+                <h2 data-swiper-parallax="-400">Developers for when you need to expand</h2>
+                <p data-swiper-parallax="-200">
+                  For those times when unexpected work lands on your door, 
+                  or you find yourself with a labour shortfall,
+                  or deadlines approach faster than expected, 
+                  you can rely on us to have developers on hand to join your team and assist.
+                </p>
+                <a hidden href="#" class="link">DISCOVER NOW</a> </div>
+            </div>
+            <div class="swiper-slide bg-image" data-background="images/hero3.jpg" data-stellar-background-ratio="0.5">
+              <div class="inner">
+                <h5 data-swiper-parallax="-600">CUSTOM SOLUTIONS</h5>
+                <h2 data-swiper-parallax="-400">If you can dream it, we can build it</h2>
+                <p data-swiper-parallax="-200">
+                  Software engineering is frought with dangers
+                  and most projects fail to meet deadlines, budgets, or expectations.
+                  If building apps is not your core strength let us do the heavy lifting.
+                  Talk to us when you need a custom built solution.
+                </p>
+                <a hidden href="#" class="link">DISCOVER NOW</a> </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"><span>PREV</span><img src="images/arrow-left.svg" alt="Image"></div>
+          <span class="swiper-button-line"></span>
+          <div class="swiper-button-next"><span>NEXT</span><img src="images/arrow-right.svg" alt="Image"></div>
+        </div>
+        <div class="scroll-down"><span></span></div>
+      </section>
+
+      <section class="content">
+        <div class="works four-cols">
+          <div class="grid-sizer"></div>
+          <!-- end grid-sizer -->
+          <div class="grid-item-double">
+            <figure class="reveal-effect se2-white wow perspective-box"> <img src="images/works01.jpg" alt="Image">
+              <figcaption> <a href="project-detail.html">
+                <div class="bg-color" data-background="#2095f4"></div>
+                <!-- end bg-color -->
+                <div class="brand"> <img src="images/logo-brand.png" alt="Image"> </div>
+                <!-- end brand -->
+                <h5>Digital Creative Works</h5>
+                <small>WEB, UI-UX, CODING</small> </a> </figcaption>
+            </figure>
+          </div>
+          <!-- end grid-item -->
+          <div class="grid-item-double">
+            <figure class="reveal-effect se2-white wow perspective-box"><img src="images/works02.jpg" alt="Image">
+              <figcaption> <a href="project-detail.html">
+                <div class="bg-color" data-background="#ffc509"></div>
+                <!-- end bg-color -->
+                <div class="brand"> <img src="images/logo-brand.png" alt="Image"> </div>
+                <!-- end brand -->
+                <h5>Coddle Mobile App</h5>
+                <small>IOS, APP, CODEX</small> </a></figcaption>
+            </figure>
+          </div>
+          <!-- end grid-item -->
+          <div class="grid-item">
+            <figure class="reveal-effect se2-white wow perspective-box"><img src="images/works03.jpg" alt="Image">
+              <figcaption> <a href="project-detail.html">
+                <div class="bg-color" data-background="#6dd7a9"></div>
+                <!-- end bg-color -->
+                <div class="brand"> <img src="images/logo-brand.png" alt="Image"> </div>
+                <!-- end brand -->
+                <h5>Coddle Mobile App</h5>
+                <small>VIDEO, WEB, UI-UX</small> </a></figcaption>
+            </figure>
+          </div>
+          <!-- end grid-item -->
+          <div class="grid-item">
+            <figure class="reveal-effect se2-white wow perspective-box"><img src="images/works04.jpg" alt="Image">
+              <figcaption><a href="project-detail.html">
+                <div class="bg-color" data-background="#2d2d2f"></div>
+                <!-- end bg-color -->
+                <div class="brand"> <img src="images/logo-brand.png" alt="Image"> </div>
+                <!-- end brand -->
+                <h5>Coddle Mobile App</h5>
+                <small>VIDEO, OTHERS</small> </a> </figcaption>
+            </figure>
+          </div>
+          <!-- end grid-item -->
+          <div class="grid-item">
+            <figure class="reveal-effect se2-white wow perspective-box"><img src="images/works06.jpg" alt="Image">
+              <figcaption> <a href="project-detail.html">
+                <div class="bg-color" data-background="#fec520"></div>
+                <!-- end bg-color -->
+                <div class="brand"> <img src="images/logo-brand.png" alt="Image"> </div>
+                <!-- end brand -->
+                <h5>Coddle Mobile App</h5>
+                <small>ANDROID, APP</small> </a></figcaption>
+            </figure>
+          </div>
+          <!-- end grid-item -->
+          <div class="grid-item-double">
+            <figure class="reveal-effect se2-white wow perspective-box"><img src="images/works05.jpg" alt="Image">
+              <figcaption> <a href="project-detail.html">
+                <div class="bg-color" data-background="#9f7cb2"></div>
+                <!-- end bg-color -->
+                <div class="brand"> <img src="images/logo-brand.png" alt="Image"> </div>
+                <!-- end brand -->
+                <h5>Coddle Mobile App</h5>
+                <small>AD, PRINT, DESIGN</small></a> </figcaption>
+            </figure>
+          </div>
+          <!-- end grid-item --> 
+        </div>
+        <!-- end works -->
+        <div class="icon-features">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-12 wow fadeIn"> <img src="images/icon01.png" alt="Image"> <small>UI-UX DESIGN</small>
+                
+                <p>Anchor provides a fantastic living experience and its facilities accommodate every students needs.</p>
+                <a href="#">DISCOVER MORE</a> </div>
+              <!-- end col-4 -->
+              <div class="col-md-4 col-sm-4 col-12 wow fadeIn" data-wow-delay="0.2s"> <img src="images/icon02.png" alt="Image"> <small>DEVELOPMENT</small>
+                
+                <p>Anchor provides a fantastic living experience and its facilities accommodate every students needs.</p>
+                <a href="#">DISCOVER MORE</a> </div>
+              <!-- end col-4 -->
+              <div class="col-md-4 col-sm-4 col-12 wow fadeIn" data-wow-delay="0.4s"> <img src="images/icon03.png" alt="Image"> <small>MARKETTING</small>
+                
+                <p>Anchor provides a fantastic living experience and its facilities accommodate every students needs.</p>
+                <a href="#">DISCOVER MORE</a> </div>
+              <!-- end col-4 --> 
+            </div>
+            <!-- end row --> 
+          </div>
+          <!-- end container --> 
+        </div>
+        <!-- end icon-features -->
+        <div class="side-image-content">
+          <div class="inner">
+            <figure class="reveal-effect se2-white wow main-image" data-aos="slide-effect"><img src="images/image01.jpg" alt="Image"></figure>
+            <figure class="reveal-effect se2-white wow sub-image" data-aos="slide-effect"><img src="images/image02.jpg" alt="Image"></figure>
+          </div>
+          <!-- end inner -->
+          <div class="inner bg1 wow fadeInRight">
+            <div class="contenty">
+              <h5>NEXT GENERATION</h5>
+              <h2>Make yourself at home...</h2>
+              <p>Here at Anchor, you will be surrounded by like-minded people. You'll have your own individual apartment and facilities which are inspired by the luxurious life you want to live.</p>
+              <a href="#"><span data-hover="FIND OUT MORE">FIND OUT MORE</span></a> </div>
+            <!-- end content --> 
+          </div>
+          <!-- end inner --> 
+        </div>
+        <!-- end side-image-content -->
+        <div class="awards" id="counter">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 col-sm-12 col-12 wow fadeIn">
+                <h5>OUR AWARDS</h5>
+                <h2>We proud of our digital kids</h2>
+              </div>
+              <!-- end col-5 -->
+              <div class="col-md-7 col-sm-12 col-12 wow fadeIn" data-wow-delay="0.2s">
+                <div class="row inner">
+                  <div class="col-md-4 col-sm-4 col-12">
+                    <div class="award">
+                      <figure><img src="images/award01.png" alt="Image"></figure>
+                      <span class="odometer" id="1">00</span> </div>
+                    <!-- end award --> 
+                  </div>
+                  <!-- end col-4 -->
+                  
+                  <div class="col-md-4 col-sm-4 col-12">
+                    <div class="award">
+                      <figure><img src="images/award02.png" alt="Image"></figure>
+                      <span class="odometer" id="2">00</span> </div>
+                    <!-- end award --> 
+                  </div>
+                  <!-- end col-4 -->
+                  
+                  <div class="col-md-4 col-sm-4 col-12">
+                    <div class="award">
+                      <figure><img src="images/award03.png" alt="Image"></figure>
+                      <span class="odometer" id="3">00</span> </div>
+                    <!-- end award --> 
+                  </div>
+                  <!-- end col-4 --> 
+                </div>
+                <!-- end row inner --> 
+              </div>
+              <!-- end col-7 --> 
+            </div>
+            <!-- end row --> 
+          </div>
+          <!-- end container --> 
+        </div>
+        <!-- end awards --> 
+      </section>
+    </main>
+
+    <div class="footer-spacing"></div>
+    <footer class="footer"> <img src="images/logo.png" alt="Image">
+      <ul class="social-media">
+        <li><a href="#">FB</a></li>
+        <li><a href="#">TW</a></li>
+        <li><a href="#">YT</a></li>
+        <li><a href="#">BE</a></li>
+      </ul>
+      <h4>Creativity is Everywhere</h4>
+      <h2>Have an idea or project? Let's talk</h2>
+      <a href="#" class="btn-contact"><span data-hover="LET'S BE IN TOUCH">LET'S BE IN TOUCH</span></a>
+      <div class="footer-bar"> <span class="pull-left">© 2021 Anchor - All rights reserved.</span> <span class="pull-right">Site created by <a href="#">Themezinho</a></span> </div>
+    </footer>
+
+    <audio id="link" src="audio/link.mp3" preload="auto"></audio>
+
+    <script src="js/jquery.min.js"></script> 
+    <script>
+      // PRELOADER
+        (function($) {
+          $(window).load(function(){
+            $("body").addClass("page-loaded");	
+          });
+        })(jQuery)
+    </script> 
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/swiper.min.js"></script> 
+    <script src="js/fancybox.min.js"></script> 
+    <script src="js/jquery.stellar.js"></script> 
+    <script src="js/odometer.min.js"></script> 
+    <script src="js/hamburger.min.js"></script> 
+    <script src="js/easings.js"></script> 
+    <script src="js/isotope.min.js"></script> 
+    <script src="js/wow.min.js"></script> 
+    <script src="js/perspective.min.js"></script> 
+    <script src="js/scripts.js"></script>
   </body>
+
 </html>
