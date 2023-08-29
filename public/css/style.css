@@ -179,7 +179,7 @@ footer{position: relative;}
 .header{ width: 100%; position: absolute; left: 0; top: -100%; z-index: 5; padding: 30px 100px; opacity: 0;}
 .header{-webkit-transition: all 1s ease; -moz-transition: all 1s ease; -ms-transform:all 1s ease; transition: all 1s ease; } 
 .header .logo{float: left; margin-right: 20px;}
-.header .logo img{ width: 35px;}
+.header .logo img{ width: 5vw; max-width: 35px;}
 .header .phone{float: left; color: #fff !important; line-height: 32px; font-family: "Fjalla One";}
 .header .language{ float: right; margin-right: 30px; margin-bottom: 0;}
 .header .language li{ float: left; list-style: none; margin: 0; margin-left: 20px; font-family: "Fjalla One";}
