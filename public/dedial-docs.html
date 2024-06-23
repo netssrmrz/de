@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Anchor | Freelancer & Creative Agency Portfolio</title>
+    <meta name="author" content="Themezinho">
+    <meta name="description" content="Anchor | Freelancer & Creative Agency Portfolio">
+    <meta name="keywords" content="creative, works, showcase, portfolio, highlight, projects, parallax, agency, digital, studio, css, animation, transition, svg, html, css">
+
+    <!-- SOCIAL MEDIA META -->
+    <meta property="og:description" content="Anchor | Freelancer & Creative Agency Portfolio">
+    <meta property="og:image" content="http://www.themezinho.net/Anchor/preview.png">
+    <meta property="og:site_name" content="Anchor">
+    <meta property="og:title" content="Anchor">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.themezinho.net/Anchor">
+
+    <!-- TWITTER META -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Anchor">
+    <meta name="twitter:creator" content="@Anchor">
+    <meta name="twitter:title" content="Anchor">
+    <meta name="twitter:description" content="Anchor | Freelancer & Creative Agency Portfolio">
+    <meta name="twitter:image" content="http://www.themezinho.net/Anchor/preview.png">
+
+    <!-- FAVICON FILES -->
+    <link href="ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+    <link href="ico/favicon.png" rel="shortcut icon">
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/hamburger-menu.css">
+    <link rel="stylesheet" href="css/odometer.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="component/DeHeader/index.js" type="module"></script> 
+
+    <style>
+      .project-detail .project code
+      {
+        color: #0f0;
+        background-color: #040;
+        padding: 10px;
+        border-radius: 6px;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+  <div class="preloader"> <img src="images/preloader.gif" alt="Image">
+    <ul class="text-rotater">
+      <li>Hangin there</li>
+      <li>Still loading</li>
+      <li>Almost done</li>
+    </ul>
+  </div>
+  <!-- end preloader -->
+  <div class="transition-overlay"></div>
+  <!-- end transition-overlay -->
+
+  <main>
+    <ul class="hamburger-navigation">
+      <li><a href="index.html">Home</a>
+        <ul class="dropdown">
+          <li><a href="index-video.html">VIDEO BG</a></li>
+          <li><a href="index-mouse-split.html">MOUSE SPLIT</a></li>
+          <li><a href="index-animation.html">ANIMATION</a></li>
+        </ul>
+        </li>
+      <li><a href="anchor.html">Anchor</a> </li>
+      <li><a href="showcase-four-cols.html">Showcase</a>
+        <ul class="dropdown">
+          <li><a href="showcase-two-cols.html">TWO COLS</a></li>
+          <li><a href="showcase-three-cols.html">THREE COLS</a></li>
+          <li><a href="showcase-four-cols.html">FOUR COLS</a></li>
+          <li><a href="showcase-five-cols.html">FIVE COLS</a></li>
+        </ul>
+          </li>
+      <li><a href="journal.html">Journal<span>BETA</span></a> </li>
+      <li><a href="say-hello.html">Say Hello</a> </li>
+    </ul>
+    <!-- end hamburger-navigation -->
+    <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path class="shape-overlays__path" d=""></path>
+      <path class="shape-overlays__path" d=""></path>
+      <path class="shape-overlays__path" d=""></path>
+    </svg>
+
+    <de-header></de-header>
+
+    <ul class="social-bar">
+      <li><a href="#">FB</a></li>
+      <li><a href="#">TW</a></li>
+      <li><a href="#">YT</a></li>
+      <li><a href="#">BE</a></li>
+    </ul>
+
+    <section class="project-hero">
+      <figure><img src="images/works02.jpg" alt="Image">
+      <figcaption><h2>DeDial</h2></figcaption></figure>
+    </section>
+
+    <section class="content">
+      <div class="project-detail">
+        <div class="container">
+          <div class="project-navbar">
+            <ul class="navbar">
+              <li><a href="#css">CSS</a></li>
+              <li><a href="#attributes">ATTRIBUTES</a></li>
+              <li><a href="#properties">PROPERTIES</a></li>
+              <li><a href="#methods">METHODS</a></li>
+              <li><a href="#events">EVENTS</a></li>
+            </ul>
+          </div>
+
+          <div class="project" id="css">
+            <h2>CSS</h2>
+            <p>
+              Whilst any CSS attribute can be applied to any of the constituent elements,
+              listed below are some of the more notable or mandatory ones.
+            </p>
+            <p class="lead">fill</p>
+            <p>
+              This optional <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill">CSS/SVG attribute</a> 
+              can be set to adjust the interior colour of the dial.
+            </p>
+            <code>
+              de-dial { fill: #fff; }
+            </code>
+            <p class="lead">stroke</p>
+            <p>
+              This mandatory <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke">CSS/SVG attribute</a> 
+              is used to set the colour of the dial ticks.
+            </p>
+            <code>
+              de-dial { stroke: #fff; }
+            </code>
+            <p class="lead">stroke-width</p>
+            <p>
+              This optional <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width">CSS/SVG attribute</a> 
+              is used to set the width of the dial ticks. Since ticks are centered around the
+              dial circumference, it's possible that very wide ticks will render outside
+              the visible area. In these cases you can increase the view box area with the
+              viewBox attribute.
+            </p>
+            <code>
+              de-dial { stroke-width: 10px; }
+            </code>
+            <p class="lead">.dial</p>
+            <p>
+              Apply CSS attributes to this class when you wish to target the dial only, rather
+              than the dial and label.
+            </p>
+            <code>
+              de-dial .dial { ... }
+            </code>
+            <p class="lead">.label</p>
+            <p>
+              Apply CSS attributes to this class when you wish to target the label only, rather
+              than the dial and label.
+            </p>
+            <code>
+              de-dial .label { ... }
+            </code>
+          </div>
+
+          <div class="project" id="attributes">
+            <h2>Attributes</h2>
+
+            <p class="lead">auto-start</p>
+            <p>
+              Boolean attribute that indicates whether the dial should start counting as
+              soon as it is rendered. If not present, counting can only be started by
+              calling the start() method.
+            </p>
+            <code>
+              &lt;de-dial auto-start&gt;&lt;/de-dial&gt;
+            </code>
+
+            <p class="lead">auto-stop</p>
+            <p>
+              Boolean attribute that indicates whether the dial should stop counting when
+              it reaches its maximum or minimum value. If not present, counting will restart
+              at 0 or the minimum value.
+            </p>
+            <code>
+              &lt;de-dial auto-stop&gt;&lt;/de-dial&gt;
+            </code>
+
+            <p class="lead">count-reverse</p>
+            <p>
+              Boolean attribute that indicates that the dial should count backwards (-1). If not
+              present, the dial will count forwards (+1).
+            </p>
+            <code>
+              &lt;de-dial count-reverse&gt;&lt;/de-dial&gt;
+            </code>
+
+            <p class="lead">gap-width</p>
+            <p>
+              Integer attribute that indicates that the length of the gap between ticks.
+            </p>
+            <code>
+              &lt;de-dial count-reverse&gt;&lt;/de-dial&gt;
+            </code>
+
+            <p class="lead">max-value</p>
+            <p class="lead">show-label</p>
+            <p class="lead">stop-href</p>
+            <p class="lead">tick-width</p>
+            <p class="lead">value</p>
+            <p class="lead">viewBox-radius</p>
+            <p class="lead">wait-millis</p>
+
+          </div>
+
+          <div class="project" id="properties">
+            <h2>Properties</h2>
+            <p class="lead">Entice Energy is a startup that aims to supply energy (starting with gas) to domestic household across the UK.</p>
+          </div>
+
+          <div class="project" id="methods">
+            <h2>Methods</h2>
+            <p class="lead">Entice Energy is a startup that aims to supply energy (starting with gas) to domestic household across the UK.</p>
+          </div>
+
+          <div class="project" id="events">
+            <h2>Events</h2>
+            <p class="lead">Entice Energy is a startup that aims to supply energy (starting with gas) to domestic household across the UK.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="footer-spacing"></div>
+  <!-- end footer-spacing -->
+  <footer class="footer"> <img src="images-de/logo.png" alt="Image">
+    <ul class="social-media">
+      <li><a href="#">FB</a></li>
+      <li><a href="#">TW</a></li>
+      <li><a href="#">YT</a></li>
+      <li><a href="#">BE</a></li>
+    </ul>
+    <h4>Creativity is Everywhere</h4>
+    <h2>Have an idea or project? Let's talk</h2>
+    <a href="#" class="btn-contact"><span data-hover="LET'S BE IN TOUCH">LET'S BE IN TOUCH</span></a>
+    <div class="footer-bar"> <span class="pull-left">© 2021 Anchor - All rights reserved.</span> <span class="pull-right">Site created by <a href="#">Themezinho</a></span> </div>
+    <!-- end footer-bar --> 
+  </footer>
+  <!-- end footer -->
+  <audio id="link" src="audio/link.mp3" preload="auto"></audio>
+
+  <!-- JS FILES --> 
+  <script src="js/jquery.min.js"></script> 
+  <script>
+    // PRELOADER
+      (function($) {
+        $(window).load(function(){
+          $("body").addClass("page-loaded");	
+        });
+      })(jQuery)
+  </script> 
+  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/swiper.min.js"></script> 
+  <script src="js/fancybox.min.js"></script> 
+  <script src="js/jquery.stellar.js"></script> 
+  <script src="js/odometer.min.js"></script> 
+  <script src="js/hamburger.min.js"></script> 
+  <script src="js/easings.js"></script> 
+  <script src="js/isotope.min.js"></script> 
+  <script src="js/wow.min.js"></script> 
+  <script src="js/perspective.min.js"></script> 
+  <script src="js/scripts.js"></script> 
+  <script src="js/contact.form.min.js"></script> 
+  <script src="js/jquery.form.min.js"></script> 
+  <script src="js/jquery.validate.min.js"></script> 
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+  <script src="js/googlemaps.min.js"></script>
+  </body>
+
+</html>

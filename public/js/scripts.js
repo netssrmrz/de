@@ -5,9 +5,9 @@
 		"use strict";
 		
 		// BUTTONS AUDIO
-    document.getElementById("hamburger").addEventListener('click', function(e) {
+    /*document.getElementById("hamburger").addEventListener('click', function(e) {
       document.getElementById("link").play();
-    });
+    });*/
 		
 		// EQUALIZER TOGGLE
     /*var source = "http://themezinho.net/anchor/audio/audio.mp3";
@@ -153,7 +153,6 @@
     {
       const elmHamburger = document.querySelector('.hamburger');
       elmHamburger.click();
-      //$('.transition-overlay').toggleClass("show-me");
 
       var goTo = this.getAttribute("href"); 
       setTimeout(function() {window.location = goTo;},1000);       
