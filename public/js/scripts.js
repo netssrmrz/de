@@ -4,35 +4,6 @@
   {
 		"use strict";
 		
-		// BUTTONS AUDIO
-    /*document.getElementById("hamburger").addEventListener('click', function(e) {
-      document.getElementById("link").play();
-    });*/
-		
-		// EQUALIZER TOGGLE
-    /*var source = "http://themezinho.net/anchor/audio/audio.mp3";
-    var audio = new Audio();
-    audio.addEventListener("load", function() {audio.play();}, true);
-    audio.src = source;
-    audio.autoplay = true;
-    audio.loop = true;
-    audio.volume = 0.2;
-    $('.equalizer').click();		
-    var playing = true;		
-    $('.equalizer').click(function() 
-    {
-      if (playing == false) 
-      {
-        audio.play();
-        playing = true;
-      } 
-      else 
-      {
-        audio.pause();
-        playing = false;
-      }
-    });*/
-		
 		// MOUSE MASK 
 		var $window = $(window);
 		var windowWidth = $window.width();
@@ -117,47 +88,6 @@
 					$(this).css("background-color", $(this).data("background"));
 				}
 			});
-		
-		// EQUALIZER
-    /*function randomBetween(range) {
-      var min = range[0],
-        max = range[1];
-      if (min < 0) {
-        return min + Math.random() * (Math.abs(min)+max);
-      }else {
-        return min + Math.random() * max;
-      }
-    }
-    $.fn.equalizerAnimation = function(speed, barsHeight){
-      var $equalizer = $(this);
-      setInterval(function(){
-        $equalizer.find('span').each(function(i){
-          $(this).css({ height:randomBetween(barsHeight[i])+'px' });
-        });
-      },speed);
-      $equalizer.on('click',function(){
-        $equalizer.toggleClass('paused');
-      });
-    }
-    var barsHeight = [
-      [2, 10],
-      [5, 14],
-      [11, 8],
-      [4, 18],
-      [8, 3]
-    ];
-    $('.equalizer').equalizerAnimation(180, barsHeight);*/
-		
-		// PAGE TRANSITION
-    $('.hamburger-navigation li a').on('click', function(e) 
-    {
-      const elmHamburger = document.querySelector('.hamburger');
-      elmHamburger.click();
-
-      var goTo = this.getAttribute("href"); 
-      setTimeout(function() {window.location = goTo;},1000);       
-      e.preventDefault();                  
-    });
 		
 		// REMOVE PERSPECTIVE EFFECT ON MOBILE
     if ($(window).width() < 991) 
@@ -245,30 +175,4 @@
     });
     return false;
   }); 
-
-  // COUNTER 
-  /*if (document.getElementById("counter"))
-  {
-    var lastWasLower = false;
-    $(document).scroll(function()
-    {
-      var p = $( "#counter" );
-      var position = p.position();
-      var position2 = position.top;
-
-      if ($(document).scrollTop() > position2-300)
-      {
-        if (!lastWasLower)
-          $('#1').html("21");
-        $('#2').html("37");
-        $('#3').html("78");
-
-        lastWasLower = true;
-      } 
-      else 
-      {
-        lastWasLower = false;
-      }
-    });		
-  };*/
 })(jQuery);
