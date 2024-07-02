@@ -137,6 +137,7 @@ class DeHeader extends HTMLElement
         <li><a href="index.html#clients">Clients</a></li>
         <li><a href="index.html#services">Services</a></li>
         <li><a href="dedial-video.html">DeDial Component</a></li>
+        <li><a href="dedial-docs.html">DeDial Reference</a></li>
       </ul>
 
       <svg cid="elmOverlay" class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">

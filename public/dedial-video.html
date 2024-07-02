@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="component/DeCarousel/style.css">
     <style>
       .inner video
       {
@@ -37,9 +38,28 @@
         background-blend-mode: multiply;
         background-color: #666;
       }
+
+      #descSec h1
+      {
+        margin-top: 50px;
+      }
     </style>
 
     <script src="component/DeHeader/index.js" type="module"></script> 
+    <script src="component/DeFooter/index.js" type="module"></script> 
+    <script src="component/DeCarousel/index.js" type="module"></script> 
+    <script type="module">
+      Main();
+      function Main()
+      {
+        samples_btn.addEventListener("click", On_Click_Samples_Btn);
+      }
+
+      function On_Click_Samples_Btn()
+      {
+        samples_carousel.showModal();
+      }
+    </script>
   </head>
 
   <body>
@@ -66,22 +86,22 @@
       <section class="slider">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide bg-image" data-background="images-de/dedial/sample-1.png">
+            <div class="swiper-slide bg-image" data-background="images-de/dedial/sample-1-dial.png">
               <div class="inner">
                 <h5 data-swiper-parallax="-600">COUNTER</h5>
-                <h2 data-swiper-parallax="-400">To count your blessings</h2>
+                <h2 data-swiper-parallax="-400">Great as a counter!</h2>
                 <p data-swiper-parallax="-200">
-                  Use DeDial wherever you need an animated feature rich counter. 
+                  Use DeDial wherever you need an animated radial counter. 
                   With no depencides on any other software, like jQuery, 
                   it's easy to install. Better still, becuase it uses the latest Web
                   Components technology you wont need to write any code. 
                 </p>
               </div>
             </div>
-            <div class="swiper-slide bg-image" data-background="images-de/dedial/sample-2.png">
+            <div class="swiper-slide bg-image" data-background="images-de/dedial/sample-2-dial.png">
               <div class="inner">
                 <h5 data-swiper-parallax="-600">VFX</h5>
-                <h2 data-swiper-parallax="-400">For some visual impact</h2>
+                <h2 data-swiper-parallax="-400">For some visual impact!</h2>
                 <p data-swiper-parallax="-200">
                   Sometimes you just need a simple dial, or two, to use as part of your
                   animtaions. DeDial is also perfect for that. Because it's implemented
@@ -89,10 +109,10 @@
                 </p>
               </div>
             </div>
-            <div class="swiper-slide bg-image" data-background="images-de/dedial/sample-3.png">
+            <div class="swiper-slide bg-image" data-background="images-de/dedial/sample-3-dial.png">
               <div class="inner">
                 <h5 data-swiper-parallax="-600">VERSATILE</h5>
-                <h2 data-swiper-parallax="-400">The sky's the limit</h2>
+                <h2 data-swiper-parallax="-400">The sky's the limit!</h2>
                 <p data-swiper-parallax="-200">
                   But that's not all. When you're ready for something more advanced, DeDial
                   comes complete with a Javascript interface and methods that make automation
@@ -110,6 +130,24 @@
         <div class="scroll-down"><span></span></div>
       </section>
 
+      <section id="descSec" class="content">
+        <div class="project-detail">
+          <div class="container">
+            <h1>What is DeDial?</h1>
+            <p>
+              DeDial is a simple User Interface component whose primary porpuse is to draw
+              a circular but digital dial. It's "digital" because individual "ticks" are
+              drawn for each possible dial position, rather than a continuous circle. 
+            </p>
+            <p>
+              These types of dials can be used to represent circular gauges, or the ticks 
+              on a clock dial, or segments of a targeting sight. The uses
+              are ultimately infinite and are only limited by the developer's imagination.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="content">
 
         <div class="icon-features">
@@ -120,10 +158,9 @@
                 <img src="images/icon01.png" alt="Image"> 
                 <small>CUSTOMIZABLE</small>
                 <p>
-                  Endlessly customizable through the use of HTML, CSS, or JavaScript.
-                  And being based on SVG means that you'll hardly ever need to resort to
-                  JavaScript to style this component and rendering will always scale
-                  smoothly.
+                  DeDial is endlessly customizable through HTML, CSS, or JavaScript.
+                  However, being based on SVG means that you'll hardly ever need to resort to
+                  JavaScript to style this component.
                 </p>
               </div>
 
@@ -131,8 +168,8 @@
                 <img src="images/icon02.png" alt="Image"> 
                 <small>EASY TO USE</small>
                 <p>
-                  This component has been implemented with the latest HTML and 
-                  Web Components standards. This means that most functionality can be
+                  DeDial has been implemented with the latest HTML and 
+                  Web Components standars which means that most functionality can be
                   accessed through HTML and CSS alone.
                 </p>
               </div>
@@ -141,9 +178,11 @@
                 <img src="images/icon03.png" alt="Image"> 
                 <small>EASY INSTALLATION</small>
                 <p>
-                  A single file link in the relevant page is all that's needed to install
-                  and start using this component. An optional stylesheet is provided
-                  and no other dependcies are required, not even jQuery.
+                  DeDial is a self-contained component with no external dependencies, 
+                  not even jQuery. This makes it incredibly easy to install.
+                  A single file link in the relevant page is all that's needed to
+                  get it going. An optional stylesheet is also provided if you
+                  don't want to build your own.
                 </p>
               </div>
 
@@ -151,15 +190,18 @@
                 <img src="images/icon04.png" alt="Image"> 
                 <small>DOCS AND SAMPLES</small>
                 <p>
-                  ...
+                  DeDial comes with reference documentation of course, but we have also
+                  included a couple of sample HTML pages and a tutorial
+                  to help you get started.
                 </p>
               </div>
 
               <div class="col-md-4 col-sm-4 col-12 wow fadeIn"> 
                 <img src="images/icon05.png" alt="Image"> 
-                <small>FEATURES GALORE</small>
+                <small>COUNTER</small>
                 <p>
-                  ...
+                  DeDial can also be used as a single value counter and comes with the
+                  necessary attributes & methods to support this.
                 </p>
               </div>
 
@@ -167,7 +209,8 @@
                 <img src="images/icon01.png" alt="Image"> 
                 <small>COMPATABILITY</small>
                 <p>
-                  ...
+                  Naturally, DeDial has been tested with Chrome, Firefox, and Safari.
+                  Desktop and mobile. IOS and Android. Will it run Doom? No.
                 </p>
               </div>
 
@@ -187,42 +230,14 @@
               <h5>SAMPLES INCLUDED</h5>
               <h2>Get inspired...</h2>
               <p>
-                We've included a couple of sample pages that will give you an idea
-                of DeDial's versatility. The first sample, demonstrates the use of the counter
-                functionality. The second sample applies various animations to static dials.
-                The third sample is an example of DeDial being customised to operate as an
-                animated clock.
+                Included in each purchase are HTML pages that will give you an idea
+                of DeDial's versatility. These demonstrate DeDial as a counter, as
+                part of marketing animations, as an animated clock, as gauges, and
+                as a load spinner.
               </p>
-              <a href="#"><span data-hover="CHECK OUT SAMPLES">CHECK OUT SAMPLES</span></a> </div>
-          </div>
-        </div>
-
-        <div class="awards" id="counter" hidden>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-5 col-sm-12 col-12 wow fadeIn">
-                <h5>OUR AWARDS</h5>
-                <h2>We proud of our digital kids</h2>
-              </div>
-              <div class="col-md-7 col-sm-12 col-12 wow fadeIn" data-wow-delay="0.2s">
-                <div class="row inner">
-                  <div class="col-md-4 col-sm-4 col-12">
-                    <div class="award">
-                      <figure><img src="images/award01.png" alt="Image"></figure>
-                      <span class="odometer" id="1">00</span> </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-12">
-                    <div class="award">
-                      <figure><img src="images/award02.png" alt="Image"></figure>
-                      <span class="odometer" id="2">00</span> </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-12">
-                    <div class="award">
-                      <figure><img src="images/award03.png" alt="Image"></figure>
-                      <span class="odometer" id="3">00</span> </div>
-                  </div>
-                </div>
-              </div>
+              <a id="samples_btn" href="#">
+                <span data-hover="CHECK OUT THE SAMPLES">CHECK OUT THE SAMPLES</span>
+              </a> 
             </div>
           </div>
         </div>
@@ -230,20 +245,13 @@
       </section>
     </main>
 
-    <div class="footer-spacing"></div>
-    <footer class="footer"> <img src="images/logo.png" alt="Image">
-      <ul class="social-media">
-        <li><a href="#">FB</a></li>
-        <li><a href="#">TW</a></li>
-        <li><a href="#">YT</a></li>
-        <li><a href="#">BE</a></li>
-      </ul>
-      <h4>Creativity is Everywhere</h4>
-      <h2>Have an idea or project? Let's talk</h2>
-      <a href="#" class="btn-contact"><span data-hover="LET'S BE IN TOUCH">LET'S BE IN TOUCH</span></a>
-      <div class="footer-bar"> <span class="pull-left">© 2021 Anchor - All rights reserved.</span> <span class="pull-right">Site created by <a href="#">Themezinho</a></span> </div>
-      <!-- end footer-bar --> 
-    </footer>
+    <de-carousel id="samples_carousel">
+      <video src="videos/dedial/sample-1.mp4" loop muted autoplay slot="items"></video>
+      <video src="videos/dedial/sample-2.mp4" loop muted autoplay slot="items"></video>
+      <video src="videos/dedial/sample-3.mp4" loop muted autoplay slot="items"></video>
+    </de-carousel>
+
+    <de-footer></de-footer>
 
     <script src="js/jquery.min.js"></script> 
     <script>

@@ -1341,7 +1341,7 @@ class Utils
 
   static toDocument(html, src_elems) 
   {
-    var template = document.createElement('template');
+    /*var template = document.createElement('template');
     template.innerHTML = html.trim();
     const template_elems = template.content;
 
@@ -1352,16 +1352,17 @@ class Utils
       {
         for (const slot_elem of slot_elems)
         {
-          const content_elems = src_elems.querySelectorAll(`[slot='${slot_elem.name}']`);
+          const slot_name = slot_elem.name || slot_elem.getAttribute('name');
+          const content_elems = src_elems.querySelectorAll(`[slot='${slot_name}']`);
           if (!Utils.isEmpty(content_elems))
           {
             slot_elem.replaceWith(...content_elems);
           }
         }
       }
-    }
+    }*/
   
-    return template_elems;
+    return Utils.To_Template(html, src_elems).content;
   }
 
   static Get_Slot_Content(src_elems, slot_name)
@@ -1507,6 +1508,31 @@ class Utils
     }
 
     return obj;
+  }
+
+  static To_Template(html, src_elems) 
+  {
+    const template = document.createElement('template');
+    template.innerHTML = html.trim();
+
+    if (src_elems)
+    {
+      const slot_elems = template.content.querySelectorAll("slot"); 
+      if (!Utils.isEmpty(slot_elems))
+      {
+        for (const slot_elem of slot_elems)
+        {
+          const slot_name = slot_elem.name || slot_elem.getAttribute('name');
+          const content_elems = src_elems.querySelectorAll(`[slot='${slot_name}']`);
+          if (!Utils.isEmpty(content_elems))
+          {
+            slot_elem.replaceWith(...content_elems);
+          }
+        }
+      }
+    }
+  
+    return template;
   }
 
   static To_Time_Str(millis)
