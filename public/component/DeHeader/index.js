@@ -136,7 +136,7 @@ class DeHeader extends HTMLElement
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#clients">Clients</a></li>
         <li><a href="index.html#services">Services</a></li>
-        <li><a href="dedial-video.html">DeDial Component</a></li>
+        <li><a href="dedial-index.html">DeDial Component</a></li>
         <li><a href="dedial-docs.html">DeDial Reference</a></li>
       </ul>
 

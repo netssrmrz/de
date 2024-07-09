@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="component/DeHeader/index.js" type="module"></script> 
+    <script src="component/DeFooter/index.js" type="module"></script> 
 
     <style>
       .project-detail .project code
@@ -36,12 +37,14 @@
         border-radius: 6px;
         display: block;
       }
-
       .project-detail .container
       {
         padding: 0 15px 15px 15px;
       }
-
+      .project-hero img
+      {
+        opacity: 0.4;
+      }
       tab
       {
         display: inline-block;
@@ -66,16 +69,9 @@
 
       <de-header></de-header>
 
-      <ul class="social-bar" hidden>
-        <li><a href="#">FB</a></li>
-        <li><a href="#">TW</a></li>
-        <li><a href="#">YT</a></li>
-        <li><a href="#">BE</a></li>
-      </ul>
-
       <section class="project-hero">
-        <figure><img src="images/works02.jpg" alt="Image">
-        <figcaption><h2>DeDial Component</h2></figcaption></figure>
+        <figure><img src="images-de/dedial/placeholder.svg" alt="Image">
+          <figcaption><h2>DeDial Component</h2></figcaption></figure>
       </section>
 
       <section class="content">
@@ -367,22 +363,8 @@
       </section>
 
     </main>
-    <div class="footer-spacing"></div>
-    
-    <footer class="footer"> <img src="images-de/logo.png" alt="Image">
-      <ul class="social-media">
-        <li><a href="#">FB</a></li>
-        <li><a href="#">TW</a></li>
-        <li><a href="#">YT</a></li>
-        <li><a href="#">BE</a></li>
-      </ul>
-      <h4>Creativity is Everywhere</h4>
-      <h2>Have an idea or project? Let's talk</h2>
-      <a href="#" class="btn-contact"><span data-hover="LET'S BE IN TOUCH">LET'S BE IN TOUCH</span></a>
-      <div class="footer-bar"> <span class="pull-left">© 2021 Anchor - All rights reserved.</span> <span class="pull-right">Site created by <a href="#">Themezinho</a></span> </div>
-      <!-- end footer-bar --> 
-    </footer>
-    <audio id="link" src="audio/link.mp3" preload="auto"></audio>
+
+    <de-footer></de-footer>
 
     <script src="js/jquery.min.js"></script> 
     <script>
