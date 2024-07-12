@@ -53,16 +53,7 @@
     <script src="component/DeFooter/index.js" type="module"></script> 
     <script src="component/DeCarousel/index.js" type="module"></script> 
     <script type="module">
-      Main();
-      function Main()
-      {
-        samples_btn.addEventListener("click", On_Click_Samples_Btn);
-      }
-
-      function On_Click_Samples_Btn()
-      {
-        samples_carousel.showModal();
-      }
+      document.body.classList.add("page-loaded");
     </script>
   </head>
 
@@ -243,7 +234,7 @@
                 part of marketing animations, as an animated clock, as gauges, and
                 as a load spinner.
               </p>
-              <a id="samples_btn" href="#">
+              <a id="samples_btn" href="./dedial-samples.html">
                 <span data-hover="CHECK OUT THE SAMPLES">CHECK OUT THE SAMPLES</span>
               </a> 
             </div>
@@ -253,23 +244,9 @@
       </section>
     </main>
 
-    <de-carousel id="samples_carousel">
-      <video src="videos/dedial/sample-1.mp4" loop muted autoplay slot="items"></video>
-      <video src="videos/dedial/sample-2.mp4" loop muted autoplay slot="items"></video>
-      <video src="videos/dedial/sample-3.mp4" loop muted autoplay slot="items"></video>
-    </de-carousel>
-
     <de-footer></de-footer>
 
     <script src="js/jquery.min.js"></script> 
-    <script>
-      // PRELOADER
-        (function($) {
-          $(window).load(function(){
-            $("body").addClass("page-loaded");	
-          });
-        })(jQuery)
-    </script> 
     <script src="js/bootstrap.min.js"></script> 
     <script src="js/swiper.min.js"></script> 
     <script src="js/fancybox.min.js"></script> 
