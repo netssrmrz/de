@@ -1,0 +1,88 @@
+
+<article style="font-family:Arial">
+
+  <p>
+    DeDial is a simple User Interface component whose primary purpose is to draw a circular 
+    but digital dial. It's "digital" because individual "ticks" are drawn for each possible 
+    dial position, rather than a continuous circle.
+  </p>
+  <p>
+    These types of dials can be used to represent circular gauges, or the ticks on a clock 
+    dial, or segments of a targeting sight. The uses are ultimately up to your imagination.
+  </p>
+  <p>
+    DeDial can also be used as a single value counter. This is handy when you want to display
+    an animated count of customers, orders, or cashflow, for example. Please note that, whilst
+    this component can be used to build clock functionality, it does not include time-based
+    counting as it is.
+  </p>
+  <p>
+    You can find additional information <a href="https://dulceengineering.com.au/dedial-index.html">here</a>.
+    Reference documentation can be found <a href="https://dulceengineering.com.au/dedial-docs.html">here</a>.
+    Also note, this is not a Wordpress component.
+  </p>
+
+  <h1 style="font-family:Arial">Basic Usage</h1>
+  <p>
+    Usage is as easy as including the component file and an optional stylesheet.
+    There are no other dependencies or files required. From there you can start
+    placing DeDial tags anywhere in your HTML.
+  </p>
+  <code style="color:#0f0;background-color:#040;padding:10px;border-radius:6px;display:block;">
+    &lt;link rel="stylesheet" href="./dedial.css"&gt;<br>
+    &lt;script src="dedial.js" type="module"&gt;&lt;/script&gt;<br>
+    <br>
+    &lt;de-dial value="100" max-value="100"&gt;&lt;/de-dial&gt;
+  </code>
+
+  <h1>Features</h1>
+  <ul>
+    <li>Great as a counter. Supports counting up and down.</li>
+    <li>Great for animations.</li>
+    <li>Ease to automate and script.</li>
+    <li>Fully customisable via CSS.</li>
+    <li>Based on SVG so rendering is always smooth and scalable.</li>
+    <li>Uses latest Web Components HTML standard so code will always be supported by browsers.</li>
+    <li>Easy to install with NO other dependencies, including jQuery.</li>
+    <li>Sample code and reference docs included.</li>
+    <li>Supports Chrome, Edge, Safari, Opera and Firefox.</li>
+    <li>Additional button component included so counters can be controlled by users.</li>
+  </ul>
+
+  <h2>Attributes</h2>
+  <ul>
+    <li>auto-start: Starts counting as soon as visible.</li>
+    <li>auto-stop: Stops counting when done.</li>
+    <li>count-reverse: Counts down instead of up.</li>
+    <li>gap-width: Set the width of the gap between ticks.</li>
+    <li>max-value: Set the maximum number of ticks.</li>
+    <li>show-label: Show counter number.</li>
+    <li>stop-href: URL to jump to when counting completes.</li>
+    <li>tick-width: Set the width of the ticks.</li>
+    <li>value: Set the starting or current value of the counter.</li>
+    <li>viewbox-radius: Facilitates large tick rendering.</li>
+    <li>wait-millis: Set the speed of counting.</li>
+  </ul>
+
+  <h2>Properties</h2>
+  <ul>
+    <li>value: Set the current counter value fro JavaScript.</li>
+    <li>labelText: Set the counter label from JavaScript.</li>
+  </ul>
+
+  <h2>Methods</h2>
+  <ul>
+    <li>reset(): Set the counter back to the starting value.</li>
+    <li>restart(): Reset the counter and start counting.</li>
+    <li>start(): Start counting.</li>
+    <li>stop(): Stop counting.</li>
+    <li>toggle(): Start or stop counting.</li>
+  </ul>
+
+  <h2>Events</h2>
+  <ul>
+    <li>completed: Fires when counting has completed.</li>
+    <li>tick: Fires on every count.</li>
+  </ul>
+  
+</article>

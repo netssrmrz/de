@@ -1,0 +1,26 @@
+Codecanyon
+
+Name: DeDial
+HTML Description: description.html
+Thumbnail: thumbnail-80x80.png
+Inline Preview Image: preview-590x300.png
+Main Files: DeDial.zip
+
+Preview Screenshots: screenshots.zip
+Optional Live Preview: n/a
+Optional Video Preview: video-preview.mp4
+Category: JavaScript / Countdowns
+High Resolution: Yes
+
+Compatible Browsers: Firefox, Safari, Opera, Chrome, Edge
+Files Included: JavaScript JS, HTML, CSS
+Software Version: n/a
+Demo URL: https://dulceengineering.com.au/dedial-samples.html
+Video Preview Resolution: 1228x690
+
+Tags: web component, javascript, html, css, counter, timer, clock, dial, countdown
+Item will be supported: Yes
+Regular License: $8
+Extended License: $30
+Comments: n/a
+Licensed: Yes
