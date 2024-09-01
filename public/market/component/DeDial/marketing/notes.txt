@@ -2,6 +2,14 @@ Codecanyon
 
 Name: DeDial
 HTML Description: description.html
+
+Files:
+.\files\DeDial.zip
+.\files\preview-590x300.png
+.\files\screenshots.zip
+.\files\thumbnail-80x80.png
+.\files\video-preview.mp4
+
 Thumbnail: thumbnail-80x80.png
 Inline Preview Image: preview-590x300.png
 Main Files: DeDial.zip
@@ -20,7 +28,7 @@ Video Preview Resolution: 1228x690
 
 Tags: web component, javascript, html, css, counter, timer, clock, dial, countdown
 Item will be supported: Yes
-Regular License: $8
+Regular License: $7
 Extended License: $30
 Comments: n/a
 Licensed: Yes

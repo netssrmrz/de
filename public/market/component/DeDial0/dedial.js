@@ -1,3 +1,4 @@
+/* © 2024 Dulce Engineering */
 
 class Utils
 {
@@ -137,6 +138,8 @@ class DeDial extends HTMLElement
   static DEF_TICK_WIDTH = 1;
   static DEF_GAP_WIDTH = 1;
   static DEF_WAIT_MILLIS = 1000;
+  static DEF_CIRCLE_RADIUS = 90;
+  static DEF_VIEW_RADIUS = 100;
 
   constructor()
   {
@@ -278,6 +281,15 @@ class DeDial extends HTMLElement
     }
   }
 
+  Set_Style(elem, attr_name)
+  {
+    if (this.hasAttribute(attr_name))
+    {
+      const css = this.getAttribute(attr_name);
+      elem.style = css;
+    }
+  }
+
   Update()
   {
     let stroke_dasharray = null;
@@ -316,18 +328,19 @@ class DeDial extends HTMLElement
   {
     const path_length = this.Calc_Path_Length();
 
-    const viewbox_radius = Utils.Get_Attribute_Int(this, "viewbox-radius", 100);
+    const viewbox_radius = Utils.Get_Attribute_Int(this, "viewbox-radius", DeDial.DEF_VIEW_RADIUS);
     const viewbox_diameter = Math.abs(viewbox_radius) * 2;
     const view_box = 
       "-" + viewbox_radius + " -" + viewbox_radius + 
       " " + viewbox_diameter + " " + viewbox_diameter;
+    const circle_radius = Utils.Get_Attribute_Int(this, "circle-radius", DeDial.DEF_CIRCLE_RADIUS);
 
     const html = `
-      <svg viewBox="${view_box}" class="dial">
+      <svg cid="svg_elem" viewBox="${view_box}" class="dial">
         <slot name="svg"></slot>
         <circle 
           cid="circle_elem"
-          cx="0" cy="0" r="90" 
+          cx="0" cy="0" r="${circle_radius}" 
           pathLength="${path_length}"
           stroke-dasharray="0 ${path_length}" 
         />
@@ -337,6 +350,10 @@ class DeDial extends HTMLElement
     const template = Utils.To_Template(html, this);
     this.innerHTML = template.innerHTML;
     Utils.Set_Id_Shortcuts(this, this, "cid");
+
+    this.Set_Style(this, "style-host");
+    this.Set_Style(this.svg_elem, "style-svg");
+    this.Set_Style(this.text_elem, "style-label");
 
     this.Update();
 
