@@ -1,0 +1,31 @@
+App name: DeDial
+App icon:
+Primary category: Marketing and conversion > Upsell and bundles > Countdown timer
+Display options: animation, announcement bar, colors and fonts, custom css, custom position, custom text, landing page, product page, checkout page, cart page
+timing options: na
+timer type: flash sale, time-limited promotion, store launch, special event, shipping cut-off, expiration date 
+languages: english
+
+App introduction: Animated, single value, counter for situations when a circular dial display is required.
+
+App details: DeDial is a simple User Interface component whose primary purpose is to draw a circular but digital dial. It's "digital" because individual "ticks" are drawn for each possible dial position, rather than a continuous circle. These types of dials can be used to represent circular gauges, or the ticks on a clock dial, or segments of a targeting sight. Additionally an animated countdown can be initiated to add a more dynamic feel to any store.
+
+Feature 1: Render varied circular dials for static or animated displays, and clock faces.
+Feature 2: Animated forward and reverse counter with optional JavaScript interface.
+Feature 3: Supports CSS directly from the theme editor for endless customisation options.
+
+Demo store URL: https://quickstart-d1ede9e9.myshopify.com
+Video URL: https://youtu.be/tvAgYY27c_w
+Video thumbnail: .\files\video-thumbnail-1500x900.jpg
+
+Screenshot 1: .\files\screenshot-1.jpg
+Screenshot 2: .\files\screenshot-2.jpg
+Screenshot 3: .\files\screenshot-3.jpg
+
+support email: it@dulceeng.com.au
+resources privacy policy URL: https://dulceengineering.com.au/dedial-privacy.html
+
+
+to do:
+screencast url
+testing instructions

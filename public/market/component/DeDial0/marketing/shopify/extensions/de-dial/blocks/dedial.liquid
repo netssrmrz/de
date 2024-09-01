@@ -1,0 +1,210 @@
+
+<div style="
+  display:flex;flex-wrap:wrap;align-items:flex-start;gap:16px;
+  {% if block.settings.align == 'right' %} 
+    flex-direction:row-reverse; 
+  {% else %}
+    flex-direction:row; 
+  {% endif %}
+  {% if block.settings.align == 'right' %} 
+    justify-content:flex-start; 
+  {% elsif block.settings.align == 'center' %}
+    justify-content:center; 
+  {% else %}
+    justify-content:flex-start; 
+  {% endif %}
+">
+  
+  <de-dial 
+    {% if block.settings.html_id %} id="{{ block.settings.html_id }}" {% endif %}
+    value="{{ block.settings.value }}"
+    {% if block.settings.auto_start %} auto-start {% endif %}
+    {% if block.settings.auto_stop %} auto-stop {% endif %}
+    {% if block.settings.count_reverse %} count-reverse {% endif %}
+    gap-width="{{ block.settings.gap_width }}"
+    max-value="{{ block.settings.max_value }}"
+    {% if block.settings.show_label %} show-label {% endif %}
+    tick-width="{{ block.settings.tick_width }}"
+    viewbox-radius="{{ block.settings.viewbox_radius }}"
+    wait-millis="{{ block.settings.wait_millis }}"
+    style-svg="{{ block.settings.dial_css }}"
+    style-label="{{ block.settings.label_css }}"
+    label-prefix="{{ block.settings.label_prefix }}"
+    label-postfix="{{ block.settings.label_postfix }}"
+    style="
+      color:{{ block.settings.style_color }};
+      fill:{{ block.settings.style_fill }};
+      stroke:{{ block.settings.style_stroke }};
+      stroke-width:{{ block.settings.style_stroke_width }};
+      font-size:{{ block.settings.style_font_size }};
+      {% if block.settings.style_bk != '' %} background:{{ block.settings.style_bk }}; {% endif %}
+      width:{{ block.settings.style_size }};
+      height:{{ block.settings.style_size }};
+      {{ block.settings.style_css }}
+    "
+  ></de-dial>
+
+  {{ block.settings.text }}
+
+</div>
+
+{% schema %}
+{
+  "name": "DeDial",
+  "target": "section",
+  "javascript": "dedial.js",
+  "stylesheet": "dedial.css",
+  "enabled_on": { "templates": ["*"], "groups": ["*"] },
+  "class": "dedial",
+  "settings": 
+  [
+    { 
+      "label": "HTML Id", 
+      "id": "html_id", 
+      "type": "text"
+    },
+    { 
+      "label": "Value", 
+      "id": "value", 
+      "type": "number", 
+      "default": 10
+    },
+    {
+      "label": "Auto-Start",
+      "id": "auto_start",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "label": "Auto-Stop",
+      "id": "auto_stop",
+      "type": "checkbox",
+      "default": false
+    },
+    {
+      "label": "Count Reverse",
+      "id": "count_reverse",
+      "type": "checkbox",
+      "default": false
+    },
+    { 
+      "label": "Gap Width", 
+      "id": "gap_width", 
+      "type": "number", 
+      "default": 2
+    },
+    { 
+      "label": "Max. Value", 
+      "id": "max_value", 
+      "type": "number", 
+      "default": 20
+    },
+    {
+      "label": "Show Label",
+      "id": "show_label",
+      "type": "checkbox",
+      "default": true
+    },
+    { 
+      "label": "Tick Width", 
+      "id": "tick_width", 
+      "type": "number", 
+      "default": 1
+    },
+    { 
+      "label": "Viewbox Radius", 
+      "id": "viewbox_radius", 
+      "type": "number", 
+      "default": 108
+    },
+    { 
+      "label": "Wait Milliseconds", 
+      "id": "wait_millis", 
+      "type": "number", 
+      "default": 100
+    },
+    { 
+      "label": "Fill Colour", 
+      "id": "style_fill", 
+      "type": "color", 
+      "default": "transparent"
+    },
+    { 
+      "label": "Tick Colour", 
+      "id": "style_stroke", 
+      "type": "color", 
+      "default": "#f00"
+    },
+    { 
+      "label": "Text Colour", 
+      "id": "style_color", 
+      "type": "color", 
+      "default": "#000"
+    },
+    { 
+      "label": "Background", 
+      "id": "style_bk", 
+      "type": "color_background", 
+      "default": "conic-gradient(#666, #ccc, #666, #ccc, #666)"
+    },
+    { 
+      "label": "Tick Size", 
+      "id": "style_stroke_width", 
+      "type": "text", 
+      "default": "20px"
+    },
+    { 
+      "label": "Label Font Size", 
+      "id": "style_font_size", 
+      "type": "text",
+      "default": "32px"
+    },
+    { 
+      "label": "Size", 
+      "id": "style_size", 
+      "type": "text",
+      "default": "150px"
+    },
+    { 
+      "label": "Text", 
+      "id": "text", 
+      "type": "richtext",
+      "default": "<p>Dials for everyone!</p>"
+    },
+    { 
+      "label": "Align", 
+      "id": "align", 
+      "type": "text_alignment",
+      "default": "left"
+    },
+    { 
+      "label": "CSS", 
+      "id": "style_css", 
+      "type": "text",
+      "default": "position:relative;display:inline-block;border-radius:100%;"
+    },
+    { 
+      "label": "Label CSS", 
+      "id": "label_css", 
+      "type": "text",
+      "default": "position:absolute;border-radius:100%;left:50%;top:50%;transform:translate(-50%, -50%);font-weight:bold;"
+    },
+    { 
+      "label": "Dial CSS", 
+      "id": "dial_css", 
+      "type": "text",
+      "default": "transform:rotate(-90deg);"
+    },
+    { 
+      "label": "HTML Before Label", 
+      "id": "label_prefix", 
+      "type": "text"
+    },
+    { 
+      "label": "HTML After Label", 
+      "id": "label_postfix", 
+      "type": "text"
+    }
+  ]
+}
+{% endschema %}
